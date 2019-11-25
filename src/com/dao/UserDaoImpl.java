@@ -83,7 +83,7 @@ public class UserDaoImpl implements UserDao {
         String sql = "update user set name ='" + user.getName()
                 + "' , password ='" + user.getPwd()
                 + "' , sex ='" + user.getSex()
-                + "' , home ='" + user.getSex()
+                + "' , home ='" + user.getHome()
                 + "' , info ='" + user.getInfo() + "' where id = " + user.getId();
         int i = DBconn.addUpdDel(sql);
         if (i > 0) {

@@ -38,6 +38,8 @@ public class UpdateServlet extends HttpServlet {
 //        String info = request.getParameter("info");
 
         System.out.println("id == "+user.getId());
+        System.out.println("sex == "+user.getSex());
+        System.out.println("home == "+user.getHome());
 
         UserDao ud = new UserDaoImpl();
 
