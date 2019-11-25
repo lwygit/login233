@@ -40,9 +40,9 @@
     %>
     <form id="form" action="UpdateServlet" method="post">
         <tr id="u<%= user.get(i).getId() %>" align="center">
-<%--            <td><input type="text" id="id" name="id" value="<%= user.get(i).getId() %>">--%>
-<%--            </td>--%>
-            <td height="30"><p><%= user.get(i).getId() %></p></td>
+            <td><input type="text" id="id" name="id" value="<%= user.get(i).getId() %>">
+            </td>
+<%--            <td height="30"><p id="id"><%= user.get(i).getId() %></p></td>--%>
             <td><input type="text" id="name" name="name" value="<%= user.get(i).getName() %>">
             </td>
             <td><input type="text" id="sex" name="sex" value="<%= user.get(i).getSex() %>">
@@ -59,6 +59,7 @@
             </td>
         </tr>
             <% } %>
+        </form>
 </table>
 <script>
     function del(id) {
@@ -75,7 +76,7 @@
 <script>
     function update() {
         $("#update").click(function () {
-            var id = $("#id").val();
+            var id = $("#uid").val();
             var name = $("#name").val();
             var sex = $("#sex").val();
             var password = $("#password").val();

@@ -5,7 +5,7 @@ import java.sql.*;
 public class DBconn {
     //static String url = "jdbc:mysql://localhost:3306/test?useunicuee=true& characterEncoding=utf8";
     static String username = "root";
-    static String password = "123321";
+    static String password = "root";
     static String table = "test";
     static String url = "jdbc:mysql://localhost:3306/" + table + "?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false";
     static Connection conn = null;
