@@ -31,7 +31,11 @@ public class ZhuceServlet extends HttpServlet {
         user.setSex(sex);
         user.setHome(home);
         user.setInfo(info);
-
+        System.out.println(user.getName());
+        System.out.println(user.getPwd());
+        System.out.println(user.getSex());
+        System.out.println(user.getHome());
+        System.out.println(user.getInfo());
         UserDao ud = new UserDaoImpl();
 
         if(ud.register(user)){

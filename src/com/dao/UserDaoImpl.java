@@ -1,26 +1,53 @@
 package com.dao;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
 import com.entity.User;
 import com.util.DBconn;
-
+import com.util.C3P0Util;
 public class UserDaoImpl implements UserDao {
 
     public boolean register(User user) {
         boolean flag = false;
-        DBconn.init();
-        int i = DBconn.addUpdDel("insert into user(name,password,sex,home,info) " +
-                "values('" + user.getName() + "','" + user.getPwd() + "','" + user.getSex() + "','" + user.getHome() + "','" + user.getInfo() + "')");
-        if (i > 0) {
-            flag = true;
+        Connection conn=null;
+
+        PreparedStatement ps = null;
+        conn = C3P0Util.getConnection();
+        System.out.println("0101");
+        try {
+            ps = conn.prepareStatement("insert into user(name,password,sex,home,info) " +
+                    "values('" + user.getName() + "','" + user.getPwd() + "','" + user.getSex() + "','" + user.getHome() + "','" + user.getInfo() + "')");
+            ps.executeUpdate();
+            flag=true;
+            System.out.println("添加操作执行成功！");
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            System.out.println("添加操作执行失败！");
+            flag=false;
+        } finally {
+            C3P0Util.release(conn, ps, null);
         }
-        DBconn.closeConn();
         return flag;
     }
+
+//    public boolean register(User user) {
+//        boolean flag = false;
+//        DBconn.init();
+//        int i = DBconn.addUpdDel("insert into user(name,password,sex,home,info) " +
+//                "values('" + user.getName() + "','" + user.getPwd() + "','" + user.getSex() + "','" + user.getHome() + "','" + user.getInfo() + "')");
+//        if (i > 0) {
+//            flag = true;
+//        }
+//        DBconn.closeConn();
+//        return flag;
+//    }
+
+
 
     public boolean login(String name, String password) {
         boolean flag = false;
