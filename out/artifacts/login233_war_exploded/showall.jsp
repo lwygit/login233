@@ -4,6 +4,9 @@
   Date: 2019/8/5
   Time: 22:47
   To change this template use File | Settings | File Templates.
+
+  此文件已废弃
+
 --%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8" %>
 <%@ page import="com.entity.User" %>

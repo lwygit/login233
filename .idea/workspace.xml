@@ -24,21 +24,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5be74310-276e-4334-808a-6cb67b1db4e3" name="Default Changelist" comment="使用c3p0链接池替换了原先连接方法。">
+    <list default="true" id="5be74310-276e-4334-808a-6cb67b1db4e3" name="Default Changelist" comment="调整了部分页面，1 省去点击查看用户的步骤；2 添加了退出，跳转到登录页面。">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/login233_war_exploded/WEB-INF/classes/com/servlet/SearchallServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/login233_war_exploded/WEB-INF/classes/com/servlet/SearchallServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/login233_war_exploded/WEB-INF/classes/com/util/DBconn.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/login233_war_exploded/WEB-INF/classes/com/util/DBconn.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/login233_war_exploded/WEB-INF/classes/com/servlet/DengluServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/login233_war_exploded/WEB-INF/classes/com/servlet/DengluServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/login233_war_exploded/showall.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/login233_war_exploded/showall.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/login233_war_exploded/success.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/login233_war_exploded/success.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/servlet/DengluServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/servlet/DengluServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/servlet/SearchallServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/servlet/SearchallServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/util/DBconn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/util/DBconn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/servlet/DengluServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/servlet/DengluServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/servlet/SearchallServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/servlet/SearchallServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/util/DBconn.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/util/DBconn.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/login233_war_exploded/success.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/web/showall.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/showall.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/success.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/success.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/success.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +215,7 @@
       <workItem from="1593508993407" duration="9547000" />
       <workItem from="1593528301749" duration="3972000" />
       <workItem from="1593567974056" duration="5017000" />
-      <workItem from="1593760075853" duration="4297000" />
+      <workItem from="1593760075853" duration="5037000" />
     </task>
     <task id="LOCAL-00001" summary="注册登陆实现html">
       <created>1566747171630</created>
@@ -261,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593576139702</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="调整了部分页面，1 省去点击查看用户的步骤；2 添加了退出，跳转到登录页面。">
+      <created>1593764960295</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1593764960295</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView">
@@ -293,7 +291,8 @@
     <MESSAGE value="增删改查完成" />
     <MESSAGE value="增删改查完成，bug已修复" />
     <MESSAGE value="使用c3p0链接池替换了原先连接方法。" />
-    <option name="LAST_COMMIT_MESSAGE" value="使用c3p0链接池替换了原先连接方法。" />
+    <MESSAGE value="调整了部分页面，1 省去点击查看用户的步骤；2 添加了退出，跳转到登录页面。" />
+    <option name="LAST_COMMIT_MESSAGE" value="调整了部分页面，1 省去点击查看用户的步骤；2 添加了退出，跳转到登录页面。" />
   </component>
   <component name="WindowStateProjectService">
     <state x="641" y="103" width="652" height="834" key="#Tomcat_9.0.21" timestamp="1593528376180">
@@ -404,10 +403,10 @@
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1593509047077" />
     <state x="2360" y="94" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593522220035" />
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1593532081524" />
-    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1593576219683">
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1593764976089">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593576219683" />
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1593764976089" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1593509036176">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
