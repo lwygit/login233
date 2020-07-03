@@ -3,6 +3,10 @@ package com.util;
 import java.sql.*;
 
 public class DBconn {
+    /**
+     * 使用了c3p0连接池 此文件已无用
+     *
+     */
     //static String url = "jdbc:mysql://localhost:3306/test?useunicuee=true& characterEncoding=utf8";
     static String username = "root";
     static String password = "Liangwy189";

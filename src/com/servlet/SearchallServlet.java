@@ -24,6 +24,6 @@ public class SearchallServlet extends HttpServlet {
         UserDao ud = new UserDaoImpl();
         List<User> userAll = ud.getUserAll();
         request.setAttribute("user", userAll);
-        request.getRequestDispatcher("/showall.jsp").forward(request, response);
+        request.getRequestDispatcher("/success.jsp").forward(request, response);
     }
 }

@@ -1,6 +1,7 @@
 package com.servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import com.dao.UserDao;
 import com.dao.UserDaoImpl;
+import com.entity.User;
 import com.google.gson.Gson;
 
 
@@ -31,6 +33,8 @@ public class DengluServlet extends HttpServlet {  //需要继承HttpServlet  并
         Gson gson = new Gson();
 
         if (ud.login(name, password)) {
+            List<User> userAll = ud.getUserAll();
+            request.setAttribute("user", userAll);
             session.setAttribute("name1", "longestory");
             request.setAttribute("xiaoxi", "欢迎用户" + name); //向request域中放置信息
             request.getRequestDispatcher("/success.jsp").forward(request, response);//转发到成功页面
