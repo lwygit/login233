@@ -19,9 +19,16 @@ public class UserDaoImpl implements UserDao {
         PreparedStatement ps = null;
         conn = C3P0Util.getConnection();
         try {
-            ps = conn.prepareStatement("insert into user(name,password,sex,home,info) " +
-                    "values('" + user.getName() + "','" + user.getPwd() + "','" + user.getSex() + "','" + user.getHome() + "','" + user.getInfo() + "')");
+            ps = conn.prepareStatement("insert into user(name,password,sex,home,info) values(?,?,?,?,?)");
+            ps.setString(1,user.getName());
+            ps.setString(2,user.getPwd());
+            ps.setString(3,user.getSex());
+            ps.setString(4,user.getHome());
+            ps.setString(5,user.getInfo());
             ps.executeUpdate();
+//            ps = conn.prepareStatement("insert into user(name,password,sex,home,info) " +
+//                    "values('" + user.getName() + "','" + user.getPwd() + "','" + user.getSex() + "','" + user.getHome() + "','" + user.getInfo() + "')");
+//            ps.executeUpdate();
             flag = true;
         } catch (SQLException e) {
             // TODO Auto-generated catch block
@@ -52,8 +59,12 @@ public class UserDaoImpl implements UserDao {
         ResultSet rs = null;
         conn = C3P0Util.getConnection();
         try {
-            ps = conn.prepareStatement("Select * from user where name='" + name + "' and password='" + password + "'");
+            ps = conn.prepareStatement("Select * from user where name=? and password=?");
+            ps.setString(1,name);
+            ps.setString(2,password);
             rs = ps.executeQuery();
+//            ps = conn.prepareStatement("Select * from user where name='" + name + "' and password='" + password + "'");
+//            rs = ps.executeQuery();
             while (rs.next()) {
                 if (rs.getString("name").equals(name) && rs.getString("password").equals(password)) {
                     flag = true;
@@ -157,11 +168,13 @@ public class UserDaoImpl implements UserDao {
         PreparedStatement ps = null;
         conn = C3P0Util.getConnection();
         try {
-            ps = conn.prepareStatement("update user set name ='" + user.getName()
-                    + "' , password ='" + user.getPwd()
-                    + "' , sex ='" + user.getSex()
-                    + "' , home ='" + user.getHome()
-                    + "' , info ='" + user.getInfo() + "' where id = " + user.getId());
+            ps = conn.prepareStatement("update user set name =?, password =?, sex =?, home =?, info =? where id = ?");
+            ps.setString(1,user.getName());
+            ps.setString(2,user.getPwd());
+            ps.setString(3,user.getSex());
+            ps.setString(4,user.getHome());
+            ps.setString(5,user.getInfo());
+            ps.setInt(6, user.getId());
             ps.executeUpdate();
             flag = true;
         } catch (SQLException e) {
@@ -173,30 +186,14 @@ public class UserDaoImpl implements UserDao {
         return flag;
     }
 
-//    public boolean update(User user) {
-//        boolean flag = false;
-//        DBconn.init();
-//        String sql = "update user set name ='" + user.getName()
-//                + "' , password ='" + user.getPwd()
-//                + "' , sex ='" + user.getSex()
-//                + "' , home ='" + user.getHome()
-//                + "' , info ='" + user.getInfo() + "' where id = " + user.getId();
-//        int i = DBconn.addUpdDel(sql);
-//        if (i > 0) {
-//            flag = true;
-//        }
-//        DBconn.closeConn();
-//        return flag;
-//    }
-
-
     public boolean delete(int id) {
         boolean flag = false;
         Connection conn = null;
         PreparedStatement ps = null;
         conn = C3P0Util.getConnection();
         try {
-            ps = conn.prepareStatement("delete  from user where id=" + id);
+            ps = conn.prepareStatement("delete from user where id=?");
+            ps.setInt(1, id);
             ps.executeUpdate();
             flag = true;
         } catch (SQLException e) {
@@ -206,16 +203,5 @@ public class UserDaoImpl implements UserDao {
         }
         return flag;
     }
-//    public boolean delete(int id) {
-//        boolean flag = false;
-//        DBconn.init();
-//        String sql = "delete  from user where id=" + id;
-//        int i = DBconn.addUpdDel(sql);
-//        if (i > 0) {
-//            flag = true;
-//        }
-//        DBconn.closeConn();
-//        return flag;
-//    }
 
 }

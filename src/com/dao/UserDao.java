@@ -5,6 +5,8 @@ import java.util.List;
 import com.entity.User;
 
 public interface UserDao {
+
+
     public boolean login(String name, String password);//登录
 
     public boolean register(User user);//注册
