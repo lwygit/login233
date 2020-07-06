@@ -1,3 +1,6 @@
+/**
+ * 项目使用了单例模式，此文件无用 2020.7.6
+ */
 package com.dao;
 
 import java.util.List;

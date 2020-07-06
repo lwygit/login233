@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.dao.UserDao;
+import com.dao.UserDao1;
 import com.dao.UserDaoImpl;
 import com.entity.User;
 
@@ -41,9 +42,9 @@ public class UpdateServlet extends HttpServlet {
         System.out.println("sex == "+user.getSex());
         System.out.println("home == "+user.getHome());
 
-        UserDao ud = new UserDaoImpl();
+        UserDao1.getInstance();
 
-        if(ud.update(user)){
+        if(UserDao1.update(user)){
             request.setAttribute("xiaoxi", "更新成功");
             request.getRequestDispatcher("/SearchallServlet").forward(request, response);
         }else{

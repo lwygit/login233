@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.dao.UserDao;
+import com.dao.UserDao1;
 import com.dao.UserDaoImpl;
 import com.entity.User;
 
@@ -31,9 +32,9 @@ public class ZhuceServlet extends HttpServlet {
         user.setSex(sex);
         user.setHome(home);
         user.setInfo(info);
-        UserDao ud = new UserDaoImpl();
+        UserDao1.getInstance();
 
-        if(ud.register(user)){
+        if(UserDao1.register(user)){
             request.setAttribute("username", name);  //向request域中放置参数
             //request.setAttribute("xiaoxi", "注册成功");
             request.getRequestDispatcher("/login.html").forward(request, response);  //转发到登录页面

@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.dao.UserDao;
+import com.dao.UserDao1;
 import com.dao.UserDaoImpl;
 
 public class DeleteServlet extends HttpServlet {
@@ -20,9 +21,10 @@ public class DeleteServlet extends HttpServlet {
 
         int id = Integer.parseInt(request.getParameter("id"));
 
-        UserDao ud = new UserDaoImpl();
+//        UserDao ud = new UserDaoImpl();
+        UserDao1.getInstance();
 
-        if(ud.delete(id)){
+        if(UserDao1.delete(id)){
             request.setAttribute("xiaoxi", "删除成功");
             request.getRequestDispatcher("/Searchall").forward(request, response);
         }else{
